@@ -1,0 +1,58 @@
+The OpenShift Developer Sandbox is a short-lived cluster in the cloud.
+- You request one for you and it will be deleted after a few days (30 days).
+- You can request a new one as many times as you wish, you just won't be able to keep apps and data long-term,
+and you won't have full administrator privileges.
+
+Steps:
+
+1. Create a Red Hat Developer account if you don't have one already.
+You can create one at https://developers.redhat.com/register
+
+2. Visit https://developers.redhat.com/developer-sandbox and login with your Red Hat Developer account.
+
+3. Click on the "Start your sandbox for free" button.
+
+4. Wait for approval, and after you see the "You're ready to get started" click again on the "Start your sandbox for free" button.
+
+5. After a few seconds you will be redirected to your OpenShift Web console, click on the Log in with "DevSandbox" button.
+
+5b. After successful login at the first time you have to fill a short form.
+
+6. Go through the guided tour offered by the portal.
+
+
+-------------------------
+
+Register Quay account
+
+If you haven’t already created a Quay.IO account, this should be completed now as it will be used throughout the course.
+RedHatQuay: https://quay.io/
+Red Hat Training has created several images and placed in an image repository for this course.
+You will
+need to use Quay.IO in order to complete the Guided Exercises and End of Chapter labs.
+
+Steps:
+
+1. Navigate to https://quay.io/ and login with your Red Hat Developer account.
+
+2. Click on your user in the upper right corner and set up a password for your account.
+
+3. Also, you can set a CLI password for your account, click on the "Generate Encrypted Password" button and copy the generated password.
+
+
+-------------------------
+
+Install Podman (Already installed)
+
+Steps:
+
+1. Login to your workstation.
+
+2. Install Podman: sudo apt update && sudo apt upgrade -y && sudo apt install -y podman
+
+3. Verify the version with: podman --version
+
+
+Install OC client (Already installed):
+
+https://gist.github.com/mehdihasan/3399998cba54bdec78deb9be4a002acb

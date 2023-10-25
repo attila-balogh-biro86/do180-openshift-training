@@ -1,0 +1,14 @@
+
+You can use the following credentials to login to your workstations:
+
+
+- Username: cloud_user
+- Password: CloudUser2023
+
+The machines:
+
+- workstation: 104.47.139.223 (FOR THE INSTRUCTOR)
+- workstation-akram-sghairi : 13.80.42.9
+- workstation-csaba-simon: 40.113.139.172
+- workstation-daniel-andrejszki: 13.69.98.120
+- workstation-gergely-cseh: 40.113.148.118

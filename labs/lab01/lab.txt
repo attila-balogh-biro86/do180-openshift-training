@@ -1,0 +1,39 @@
+DEMO - Using the RHEL8 Universal Boot Image
+
+
+1. Search for Containers (specifically UBI)
+podman search registry.access.redhat.com/ubi8
+
+2. Choose and run a container accessing the bash shell
+sudo podman run -it registry.access.redhat.com/ubi8/ubi /bin/bash
+When running a container, it is possible to pass -it as a command line option and then specify an interactive shell such as /bin/bash
+
+3. Verify that you are running the container and accessing the container shell.
+cat /etc/redhat-release
+
+4. Change or Modify the Container - Install a package
+yum install httpd
+
+5. Attempt to Enable Daemon for HTTPD with SystemD
+systemctl enable httpd --now
+
+6. Run the HTTP package
+httpd&
+
+7. Test the Webserver
+curl http://localhost
+
+8. Exit from this container and mark the containerID (root@something)
+
+9. Attempt to run the container again
+sudo podman run -it registry.access.redhat.com/ubi8/ubi /bin/bash and after that exit
+
+9. List containers
+sudo podman ps -a // Observe the different containerIds
+
+
+Clean Up
+// sudo podman rm containerId can be used to remove containers which are not in use anymore
+
+// Podman getting started: https://podman.io/getting-started/
+// https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/

@@ -1,0 +1,43 @@
+DEMO - Container Lifecycles
+
+
+1. Use podman to find an apache container
+sudo podman search docker.io/httpd
+
+2. Running container with podman run and specifying a name
+sudo podman run --name HTTPD-Demo1 docker.io/library/httpd
+
+3. Using podman ps -a to see all containers
+sudo podman ps -a
+
+4. Using podman rm to remove stopped containers
+sudo podman rm HTTPD-Demo1
+
+5. Running container with podman run and specifying a name as well as the -d to run as daemon
+sudo podman run --name HTTPD-Demo1 -d docker.io/library/httpd
+
+6. Using podman inspect to get container details
+sudo podman inspect HTTPD-Demo1
+
+
+6b. It is possible to use the -f option to utilize a formatting template
+    to filter and retrieve a single piece of desired information.
+sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' HTTPD-Demo1
+
+7. Using podman exec to get a shell
+sudo podman exec -it HTTPD-Demo1 /bin/bash
+
+8. Install curl inside the container
+apt-get update && apt-get install curl
+
+9. Test the service running
+curl http://localhost
+
+10. Test the service from your workstation based on the IP address got in step 6b
+curl http://IpAddressOfTheContainer
+
+8. Use podman stop to stop the running container
+sudo podman stop HTTPD-Demo1
+
+9. Use podman rm to Delete the container
+sudo podman rm HTTPD-Demo1
