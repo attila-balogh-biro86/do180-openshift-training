@@ -1,0 +1,24 @@
+ Building an Image with a Dockerfile
+
+1 Check the content of the provided Docker file and copy it to your workstation
+
+2. Build the image using the following command
+sudo podman build --layers=false -t abaloghb:1.0 .
+
+3. Check the local images
+sudo podman images
+
+4. Launch the image
+sudo podman run --name httpd-demo -d -p 9080:80 localhost/abaloghb:1.0
+
+5. Test the container
+curl localhost:9080
+
+6. Stop the container
+sudo podman stop httpd-demo
+
+7. Remove the container
+sudo podman rm httpd-demo
+
+8. Remove the image
+sudo podman rmi localhost/abaloghb:1.0

@@ -23,9 +23,3 @@ apt-get update && apt-get install curl
 
 6. Verify apache Service and Website
 curl http://localhost/custom.html
-
-6.b exit the container
-exit
-
-7. Log out from the container and test the curl command on your workstation
-curl http://localhost/custom.html

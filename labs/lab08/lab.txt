@@ -1,0 +1,1 @@
+Creating application from S2I via web console.

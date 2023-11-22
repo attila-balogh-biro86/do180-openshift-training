@@ -1,0 +1,28 @@
+Deploying a Webserver on Openshift
+
+
+
+1. Login to Openshift
+oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD} ${RHT_OCP4_MASTER_API}
+
+2 Create a new app
+oc new-app \
+--docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:latest \
+--name=mysql-ocp \
+-e MYSQL_USER=demouser -e MYSQL_PASSWORD=redhat -e MYSQL_DATABASE=demodb \
+-e MYSQL_ROOT_PASSWORD=r00tpa55
+
+3. List pods and names
+oc get pods -o=wide
+
+4. Expose service
+oc expose service mysql-ocp
+
+5. Use oc port-forward to Port Forward and Test
+oc port-forward $(podName) 3306:3306
+
+6. Install mysql client
+sudo apt install mysql-client-core-8.0
+
+7. Test the database
+mysql -u demouser -predhat --protocol tcp -h localhost

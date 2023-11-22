@@ -1,0 +1,9 @@
+Deploy multicontainer applications with Openshift templates
+
+
+1. List templates
+oc get templates -n openshift
+
+2. Check specific template in YAML format
+//  openshift get template <name> -n openshift -o yaml
+oc get template s2i-fuse711-spring-boot-2-camel-rest-3scale -n openshift -o yaml
