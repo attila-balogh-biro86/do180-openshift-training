@@ -4,6 +4,17 @@ Deploy multicontainer applications with Openshift templates
 1. List templates
 oc get templates -n openshift
 
-2. Check specific template in YAML format
+2. Check specific templates in YAML format
 //  openshift get template <name> -n openshift -o yaml
 oc get template s2i-fuse711-spring-boot-2-camel-rest-3scale -n openshift -o yaml
+
+3. See the parameters
+oc process --parameters s2i-fuse711-spring-boot-2-camel-rest-3scale -n openshift
+
+4. Export it to yaml
+oc get template s2i-fuse711-spring-boot-2-camel-rest-3scale -n openshift -o yaml >> template.yaml
+
+5. Process the template and populate it with parameters
+$ oc process -f my-rails-postgresql \
+    -p A=value1 \
+    -p B=value2
