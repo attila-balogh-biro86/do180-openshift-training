@@ -7,7 +7,7 @@ You can use the following credentials to login to your workstations:
 
 The machines:
 
-- workstation: 104.47.139.223 (FOR THE INSTRUCTOR)
+- workstation: 52.232.101.231 (FOR THE INSTRUCTOR)
 - workstation-akram-sghairi : 20.224.227.244
 - workstation-csaba-simon: 20.126.150.225
 - workstation-daniel-andrejszki: 20.126.23.143
