@@ -6,4 +6,30 @@ oc get templates -n openshift
 
 2. Check specific template in YAML format
 //  openshift get template <name> -n openshift -o yaml
-oc get template s2i-fuse711-spring-boot-2-camel-rest-3scale -n openshift -o yaml
+oc get template s2i-fuse711-spring-boot-2-camel-rest-3scale -n openshift -o yaml >> template-s2i-fuse711-spring-boot-2-camel-rest-3scale.yaml
+
+
+3. Edit the generated yaml and change the namespace to match to your current one
+
+4. Create our own template
+oc create -f ./template-s2i-fuse711-spring-boot-2-camel-rest-3scale.yaml -n namespace
+
+4. Check the template
+oc get template $(templateName) -n namespace
+
+5. Check the parameters
+oc process --parameters $(templateName) -n namespace
+
+6. Create our own application from the template
+oc new-app --template=$(templateName) -n namespace
+
+OR
+
+oc new-app --template=$(templateName)-p \
+                        p1=value1 \
+                        p2=value2
+
+
+ --------
+
+ oc process -f ./template-hello-world.yaml -p PARAM1=VALUE1 -p PARAM2=VALUE2 | oc apply -f -
